@@ -7,11 +7,11 @@
     <?php include "./components/template/header.php" ?>
 
   <main class="main" id="app">
-    <form @submit.prevent="getFilteredDisks()">
-      <input type="text" v-model="inputFilter">
-      <button>CERCA</button>
-    </form>
     <div class="container">
+        <form class="form-filter" @submit.prevent="getFilteredDisks()">
+        <input class="form-filter__input" type="text" v-model="inputFilter">
+        <button class="btn btn--form-filter">CERCA</button>
+        </form>
         <div class="cards-grid">
             <div v-for="disk in disks" class="card">
                 <div class="card__image-container">
