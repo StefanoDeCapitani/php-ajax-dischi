@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color-light: #2b3a46;
+  --bg-color-dark: #192d3b;
+  --cards-grid-gap: 0.7rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg-color-dark);
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.header {
+  padding: 0.8rem 1.4rem;
+  background-color: var(--bg-color-light);
+}
+
+.header__logo {
+  height: 44px;
+}
+
+.main {
+  background-color: var(--bg-color-dark);
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  width: 70%;
+  max-width: 1160px;
+  height: 100%;
+
+  padding: 2rem 0;
+  margin: auto;
+}
+
+.cards-grid {
+  margin-left: -var(--cards-grid-gap);
+  margin-right: -var(--cards-grid-gap);
+
+  display: flex;
+  flex-flow: row wrap;
+  color: white;
+}
+
+.card {
+  width: calc((100% / 5) - (var(--cards-grid-gap) * 2));
+  margin: var(--cards-grid-gap);
+  padding: 1rem;
+  background-color: var(--bg-color-light);
+  display: grid;
+  grid-template-rows: auto 1fr 0.5fr;
+  gap: 1.3rem;
+}
+
+.ratio {
+  position: relative;
+}
+
+.ratio::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.card__image-content {
+  position: absolute;
+  inset: 0;
+}
+
+.card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__title {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.card__title,
+.card__author,
+.card__year {
+  text-align: center;
+}
+
+.card__author,
+.card__year {
+  color: #7f7f7f;
+}
